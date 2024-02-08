@@ -84,15 +84,15 @@ export const ControlledForm = () => {
 
 const SortDropdown = ({onSelect}: {onSelect: (sort: SortBy) => void}) => {
 	return (
-		<div class="dropdown">
-			<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown">
+		<div className="dropdown">
+			<button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown">
 				Sort By...
 			</button>
-			<ul class="dropdown-menu">
-			<li class="dropdown-item" value="created" onClick={() => onSelect('full_name')}>{'Name (Default)'}</li>
-				<li class="dropdown-item" value="created" onClick={() => onSelect('created')}>Created</li>
-				<li class="dropdown-item" value="updated" onClick={() => onSelect('updated')}>Updated</li>
-				<li class="dropdown-item" value="pushed" onClick={() => onSelect('pushed')}>Pushed</li>
+			<ul className="dropdown-menu">
+			<li className="dropdown-item" value="created" onClick={() => onSelect('full_name')}>{'Name (Default)'}</li>
+				<li className="dropdown-item" value="created" onClick={() => onSelect('created')}>Created</li>
+				<li className="dropdown-item" value="updated" onClick={() => onSelect('updated')}>Updated</li>
+				<li className="dropdown-item" value="pushed" onClick={() => onSelect('pushed')}>Pushed</li>
 			</ul>
 		</div>
 	);

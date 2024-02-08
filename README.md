@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# GitHub API Tester
+### with React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project implements the technical specifications outlined in [AR - Technical Test.pdf](AR - Technical Test.pdf). It allows users to search GitHub for either a username or an organization, and returns all the repositories for the given criteria. Results can be sorted in all ways supported by the API. Note that at this time, sort must be defined BEFORE submitting a search, since pagination is server-side.
 
-Currently, two official plugins are available:
+## To Run
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone repository
+2. Ensure Node, npm, and nvm are installed
+3. From the project root, run `nvm use`
+4. Install packages with `npm i` (use `--no-bin-links` for wsl)
+5. Run with `npm run dev` and visit http://127.0.0.1:5173/ to see the page.
 
-## Expanding the ESLint configuration
+## Technical Notes
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- An `.nvmrc` file is included for quick engine matching before installation.
+- Symlinks don't work on WSL, so yarn will complain - hence the decision to use npm.
+- Created with Vite because `create-react-app` is deprecated as of 2023.
+- Bootstrap CSS/JS and SCSS support added for quick styling.
+- Header links parsed with an open-src function.
+- GitHub's `Octokit` package used to easily interact with API.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Needed Improvements
+- Styling is still a bit funky in certain areas, particularly surrounding the dropdown and table areas.
+- The ability to sort results by clicking table headers would be really nice.
+- Refactoring to break up large components like `ControlledForm` and `ResultsTable` is needed.
+- Refactoring of component heirarchy could be useful, since the results table really probably shouldn't be a child of the search form, but is currently included as such because elevating the results state would have been more time-consuming.
+- Adding authentication for users to access their own private repositories would be nice, rather than relying on a simple individual token in the .env file.
+- Improving security regarding the handling of GitHub tokens is needed.
