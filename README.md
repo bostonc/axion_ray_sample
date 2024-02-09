@@ -25,5 +25,4 @@ This project implements the technical specifications outlined in [AR - Technical
 - The ability to sort results by clicking table headers would be really nice.
 - Refactoring to break up large components like `ControlledForm` and `ResultsTable` is needed.
 - Refactoring of component heirarchy could be useful, since the results table really probably shouldn't be a child of the search form, but is currently included as such because elevating the results state would have been more time-consuming.
-- Adding authentication for users to access their own private repositories would be nice, rather than relying on a simple individual token in the .env file.
-- Improving security regarding the handling of GitHub tokens is needed.
+- Adding authentication for users to access their own private repositories would be nice.

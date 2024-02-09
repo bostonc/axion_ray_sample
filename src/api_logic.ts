@@ -47,14 +47,8 @@ type GitHubResponse = {
 	status: number;
 }
 
-const header = {
-	authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
-	'X-GitHub-Api-Version': '2022-11-28'
-};
-
 export const runUserQuery = async (search: string, sort?: SortBy) => {
 	const result: GitHubResponse = await request('GET /users/{username}/repos', {
-		headers: header,
 		username: search,
 		per_page: 15,
 		sort: sort,
@@ -68,7 +62,6 @@ export const runUserQuery = async (search: string, sort?: SortBy) => {
 
 export const runOrgQuery = async (search: string, sort?: SortBy) => {
 	const result: GitHubResponse = await request("GET /orgs/{org}/repos", {
-		headers: header,
 		org: search,
 		per_page: 15,
 		sort: sort,
@@ -81,9 +74,7 @@ export const runOrgQuery = async (search: string, sort?: SortBy) => {
 }
 
 export const runChangePage = async (link: string) => {
-	const result: GitHubResponse = await request(`GET ${link}`, {
-		headers: header,
-	}).catch(() => {
+	const result: GitHubResponse = await request(`GET ${link}`).catch(() => {
 		console.log("Couldn't find page.");
 		alert("No Results!");
 	});
