@@ -1,7 +1,7 @@
 # GitHub API Tester
 ### with React + TypeScript + Vite
 
-This project implements the technical specifications outlined in [AR - Technical Test.pdf](AR - Technical Test.pdf). It allows users to search GitHub for either a username or an organization, and returns all the repositories for the given criteria. Results can be sorted in all ways supported by the API. Note that at this time, sort must be defined BEFORE submitting a search, since pagination is server-side.
+This project implements the technical specifications outlined in [AR - Technical Test.pdf](</AR - Technical Test.pdf>). It allows users to search GitHub for either a username or an organization, and returns all the repositories for the given criteria. Results can be sorted in all ways supported by the API. Note that at this time, sort must be defined BEFORE submitting a search, since pagination is server-side.
 
 ## To Run
 
