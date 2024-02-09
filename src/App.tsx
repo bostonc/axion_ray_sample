@@ -3,10 +3,6 @@ import viteLogo from '/vite.svg';
 import './App.scss';
 import { ControlledForm } from './Form';
 
-
-/* TODO: break api calls into separate functions, single call each.
-let user indicate org or user in form. then can use server side pagination. */
-
 function App() {
 
   return (
