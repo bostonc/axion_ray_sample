@@ -21,6 +21,7 @@ This project implements the technical specifications outlined in [AR - Technical
 - GitHub's `Octokit` package used to easily interact with API.
 
 ## Needed Improvements
+- Add unit tests (omitted due to dev time constraints).
 - Styling is still a bit funky in certain areas, particularly surrounding the dropdown and table areas.
 - The ability to sort results by clicking table headers would be really nice.
 - Refactoring to break up large components like `ControlledForm` and `ResultsTable` is needed.
