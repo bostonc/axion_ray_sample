@@ -42,3 +42,34 @@ body {
   }
 }
 
+.puzzle {
+  width: 100%;
+  margin: 0 auto 10px 0;
+  .row {
+    display: flex;
+    justify-content: center;
+    .myblock {
+      height: 35px;
+      width: 35px;
+      line-height: 33px;
+      background-color: #6d84a0;
+      border: 1px solid black;
+      border-radius: 5px;
+      text-align: center;
+      margin: 1px;
+      cursor: pointer;
+      &:hover {
+        background-color: #4e6e8e;
+      }
+    }
+    .lit {
+      background-color: #00bc2f;
+      &:hover {
+        background-color: #00a52c;
+      }
+    }
+    .done {
+      background-color: #303f34;
+    }
+  }
+}
